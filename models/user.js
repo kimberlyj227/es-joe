@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const crypto = require("crypto");
+const {v1: uuidv1 } = require("uuid");
 
 //Defining model for user collection
 const userSchema = new Schema({

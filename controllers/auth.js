@@ -1,4 +1,4 @@
-const User = require("../models");
+const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const expressJwt = require("express-jwt"); //auth check
 const { errorHandler } = require("../helpers/dbErrorHandler")
@@ -41,7 +41,7 @@ exports.signin = (req, res) => {
     res.cookie("t", token, {expire: new Date() + 9999});
     //return res with user and token to front end
     const { _id, name, email, role } = user;
-    return res.json({ token, user: { _id, email, name, role }});
+    return res.json({ token, user: { _id, email, name, role  }});
   })
 };
 
